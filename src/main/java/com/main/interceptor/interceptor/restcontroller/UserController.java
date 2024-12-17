@@ -2,6 +2,7 @@ package com.main.interceptor.interceptor.restcontroller;
 
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import com.main.interceptor.interceptor.model.User;
 
 @RestController
 @RequestMapping("/auth")
+@Slf4j
 public class UserController {
 
 
@@ -26,6 +28,7 @@ public class UserController {
 
     @PostMapping("/user")
     public ResponseEntity<?> createUser(@RequestBody User user){
+        log.warn("user created");
         return ResponseEntity.ok(user);
     }
     
