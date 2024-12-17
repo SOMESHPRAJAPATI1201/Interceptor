@@ -3,9 +3,7 @@ package com.main.interceptor.interceptor.restcontroller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.main.interceptor.interceptor.model.User;
 
@@ -24,6 +22,11 @@ public class UserController {
     @GetMapping("/users")
     public ResponseEntity<?> getMethodName() {
         return ResponseEntity.ok(users);
+    }
+
+    @PostMapping("/user")
+    public ResponseEntity<?> createUser(@RequestBody User user){
+        return ResponseEntity.ok(user);
     }
     
 
